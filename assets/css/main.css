@@ -2771,6 +2771,7 @@ input, select, textarea {
 
 				.tiles article h3 a:hover {
 					color: inherit !important;
+					
 				}
 
 			.tiles article .link.primary {
@@ -2810,6 +2811,7 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 1;
+				
 			}
 
 			.tiles article:hover:before {
@@ -2826,6 +2828,7 @@ input, select, textarea {
 				-ms-filter: blur(0.5em);
 				filter: blur(0.5em);
 				opacity: 0;
+				
 			}
 
 			.tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
