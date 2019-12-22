@@ -2793,7 +2793,7 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.85;
+				opacity: 0.5; /* Fade Opacity */
 				position: absolute;
 				width: 100%;
 				z-index: 2;
@@ -2832,29 +2832,31 @@ input, select, textarea {
 				width: 60%;
 			}
 			
-			/*.tiles article:nth-child(6n - 5):before {
-				background-color: #000;
+			/* Colours to fade from */
+			
+			.tiles article:nth-child(6n - 5):before {
+				background-color: #35375A;
 			}
 
 			.tiles article:nth-child(6n - 4):before {
-				background-color: #000;
+				background-color: #35375A;
 			}
 
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #000;
+				background-color: #35375A;
 			}
 
 			.tiles article:nth-child(6n - 2):before {
-				background-color: #000;
+				background-color: #35375A;
 			}
 
 			.tiles article:nth-child(6n - 1):before {
-				background-color: #000;
+				background-color: #35375A;
 			}
 
 			.tiles article:nth-child(6n):before {
-				background-color: #000;
-			}*/
+				background-color: #35375A;
+			}
 
 			/*.tiles article:nth-child(6n - 5):before {
 				background-color: #6fc3df;
