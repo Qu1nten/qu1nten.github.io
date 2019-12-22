@@ -3741,11 +3741,12 @@ input, select, textarea {
 
 #footer
 {
-	background-image:url(images/header.jpg);
+	background-image:url(../../images/header.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	text-align:center;
 }
 
 	#footer .copyright {
