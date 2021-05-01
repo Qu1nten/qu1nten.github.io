@@ -6,96 +6,8 @@
 -->
 <html>
 	<head>
-		<style>
-		body {font-family: Arial, Helvetica, sans-serif;}
-
-		.modalImages {
-		  border-radius: 5px;
-		  cursor: pointer;
-		  transition: 0.3s;
-		}
-
-		.modalImages:hover {opacity: 0.7;}
-
-		/* The Modal (background) */
-		.modal {
-		  display: none; /* Hidden by default */
-		  position: fixed; /* Stay in place */
-		  z-index: 9001; /* Sit on top */
-		  padding-top: 100px; /* Location of the box */
-		  left: 0;
-		  top: 0;
-		  width: 100%; /* Full width */
-		  height: 100%; /* Full height */
-		  overflow: auto; /* Enable scroll if needed */
-		  background-color: rgb(0,0,0); /* Fallback color */
-		  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-		}
-
-		/* Modal Content (image) */
-		.modal-content {
-		  margin: auto;
-		  margin-top: 5%;
-		  display: block;
-		  width: 80%;
-		  max-width: 700px;
-		}
-
-		/* Caption of Modal Image */
-		#caption {
-		  margin: auto;
-		  display: block;
-		  width: 80%;
-		  max-width: 700px;
-		  text-align: center;
-		  color: #ccc;
-		  padding: 10px 0;
-		  height: 150px;
-		}
-
-		/* Add Animation */
-		.modal-content, #caption {  
-		  -webkit-animation-name: zoom;
-		  -webkit-animation-duration: 0.6s;
-		  animation-name: zoom;
-		  animation-duration: 0.6s;
-		}
-
-		@-webkit-keyframes zoom {
-		  from {-webkit-transform:scale(0)} 
-		  to {-webkit-transform:scale(1)}
-		}
-
-		@keyframes zoom {
-		  from {transform:scale(0)} 
-		  to {transform:scale(1)}
-		}
-
-		/* The Close Button */
-		.close {
-		  position: absolute;
-		  top: 60px;
-		  right: 35px;
-		  color: #f1f1f1;
-		  font-size: 40px;
-		  font-weight: bold;
-		  transition: 0.3s;
-		}
-
-		.close:hover,
-		.close:focus {
-		  color: #bbb;
-		  text-decoration: none;
-		  cursor: pointer;
-		}
-
-		/* 100% Image Width on Smaller Screens */
-		@media only screen and (max-width: 700px){
-		  .modal-content {
-			width: 100%;
-		  }
-		}
-		</style>
+		<link rel="stylesheet" href="NiceImages.css" />
+			
 		<title>Quinten Rijken :: Minecraft</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -184,10 +96,10 @@
 							  	<section>
 								
 										
-									    <video width="50%" height="100%"  autoplay loop controls muted>
+									    <video class="bossdaily" width="50%" height="100%"  autoplay loop controls muted>
 											<source src="video/QuantumShort.mp4" type="video/mp4">
 										</video>
-										<video width="50%" height="100%" autoplay loop controls muted>
+										<video class="bossdaily" width="50%" height="100%" autoplay loop controls muted>
 											<source src="video/SnowyShort.mp4" type="video/mp4">
 										</video>
 								</section>
@@ -221,9 +133,9 @@
 								
 								
 								<section>
-									<a href="images/minecraft/5frame.png" class="image" target="_blank">
-										<img src="images/minecraft/5frame.png" alt="" data-position="top middle" />
-									</a>
+								
+									<img class="modelImages image" src="images/minecraft/5frame.png" alt="test" data-position="top center" /> 
+									
 									<div class="content">
 										<div class="inner">																		
 											<p><b>5 Frame Studios / January 2021 - present</b><br>
@@ -237,9 +149,9 @@
 								
 								
 									<section>
-									<a href="images/minecraft/bfk.png" class="image" target="_blank">
-										<img src="images/minecraft/bfk.png" alt="" data-position="center center" />
-									</a>
+									
+									<img class="modelImages image" src="images/minecraft/bfk.png" alt="test" data-position="top center" /> 
+									
 									<div class="content">
 										<div class="inner">										
 											<p><b>Shaliquinn's Schematics / December 2019 - November 2020</b><br>
@@ -254,10 +166,9 @@
 								
 								
 								  		<section>
-								<a href="images/minecraft/render.png" class="image" target="_blank">
-										<img src="images/minecraft/render.png" alt="" data-position="center center" />
-										
-									</a>
+								
+									<img class="modelImages image" src="images/minecraft/render.png" alt="test" data-position="top center" /> 
+									
 									
 									<div class="content">
 										<div class="inner">
@@ -278,9 +189,9 @@
 								
 								
 									<section>
-									<a href="images/minecraft/mineplex.png" class="image" target="_blank">
-										<img src="images/minecraft/mineplex.png" alt="" data-position="center center" />
-									</a>
+									
+									<img class="modelImages image" src="images/minecraft/mineplex.png" alt="test" data-position="top center" /> 
+									
 									<div class="content">
 										<div class="inner">
 										
@@ -300,9 +211,9 @@
 														                                                                                            																															
                                 
                                 	<section>
-									<a href="images/minecraft/factionspawnNOMARK.png" class="image" target="_blank">
-										<img src="images/minecraft/factionspawnNOMARK.png" alt="" data-position="top center" />
-									</a>
+									
+									<img class="modelImages image" src="images/minecraft/factionspawnNOMARK.png" alt="test" data-position="top center" /> 
+									
 									
 									
 									<div class="content">
@@ -338,13 +249,13 @@
 								</div>
 										<div class="box alt">
 														<div class="row gtr-50 gtr-uniform">
-															<div  class="col-4"><span class="image fit"><a href="images/minecraft/Extra/Qbarok.png" target="_blank"><img src="images/minecraft/Extra/Qbarok.png" alt="" /></a></span></div>
-															<div class="col-4"><span class="image fit"><a href="images/minecraft/Extra/mars.png" target="_blank"><img src="images/minecraft/Extra/mars.png" alt="" /></a></span></div>
-															<div class="col-4"><span class="image fit"><a href="images/minecraft/Extra/mgqHLg2.png" target="_blank"><img src="images/minecraft/Extra/mgqHLg2.png" alt="" /></a></span></div>
+															<div  class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/Qbarok.png" alt="dasdsadas" /></span></div>
+															<div class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/mars.png" alt="dasasdsad" /></span></div>
+															<div class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/mgqHLg2.png" alt="dasasdsad" /></span></div>
 															<!-- Break -->
-															<div class="col-4"><span class="image fit"><a href="images/minecraft/Extra/church2.png" target="_blank"><img src="images/minecraft/Extra/church2.png" alt="" /></a></span></div>
-															<div class="col-4"><span class="image fit"><a href="images/minecraft/Extra/HeadMArk.png" target="_blank"><img src="images/minecraft/Extra/HeadMArk.png" alt="" /></a></span></div>
-															<div class="col-4"><span class="image fit"><a href="images/minecraft/Extra/build3.png" target="_blank"><img src="images/minecraft/Extra/build3.png" alt="" /></a></span></div>
+															<div class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/church2.png" alt="dasdas" /></span></div>
+															<div class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/HeadMArk.png" alt="dasdas" /></span></div>
+															<div class="col-4"><span class="image fit"><img class="modelImages" src="images/minecraft/Extra/build3.png" alt="dsadsa" /></span></div>
                                                             <!-- Break -->
 													
 														</div>
@@ -448,42 +359,9 @@
 			  <div id="caption"></div>
 			</div>
 
-			<script>
-			// Get the modal
-			var modal = document.getElementById("myModal");
-
-
-			// Get the image and insert it inside the modal - use its "alt" text as a caption
-			var modelImages = document.getElementsByClassName("modelImages");
-
-			for(var i = 0; i < modelImages.length; ++i)
-			{
-				var img = modelImages[i];
-				var modalImg = document.getElementById("img01");
-				var captionText = document.getElementById("caption");
-				img.onclick = function(){
-				  modal.style.display = "block";
-				  modalImg.src = this.src;
-				  captionText.innerHTML = this.alt;
-				}
-			}
-
-			// Get the <span> element that closes the modal
-			var span = document.getElementsByClassName("close")[0];
-
-			// When the user clicks on <span> (x), close the modal
-			span.onclick = function() { 
-			  modal.style.display = "none";
-			}
+			<script src="NiceImages.js"></script>
+				
 			
-			// Get the <span> element that closes the modal
-			var span2 = document.getElementsByClassName("modal")[0];
-
-			// When the user clicks on <span> (x), close the modal
-			span2.onclick = function() { 
-			  modal.style.display = "none";
-			}	
-			</script>
 
 	</body>
 </html>
