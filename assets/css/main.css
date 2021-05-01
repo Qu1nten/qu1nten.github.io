@@ -476,7 +476,7 @@ input, select, textarea {
 		}
 
 			.row.gtr-50 > * {
-				padding: 0 0 0 1em;
+				padding: 0 0 0 2em;
 			}
 
 			.row.gtr-50.gtr-uniform {
@@ -2192,7 +2192,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 2em 0;
+			margin: 0 0 0em 0;
 			width: 100%;
 		}
 
