@@ -3993,3 +3993,32 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+		
+		
+		
+		
+		
+		
+		
+		.image-slider {
+			  position: relative;
+			  width: 100%;
+			  height: auto;
+			}
+
+			.before-image,
+			.after-image {
+			  position: absolute;
+			  top: 0;
+			  width: 100%;
+			  height: auto;
+			}
+
+			.slider-handle {
+			  position: absolute;
+			  top: 0;
+			  width: 4px;
+			  height: 100%;
+			  background-color: #000;
+			  cursor: ew-resize;
+			}

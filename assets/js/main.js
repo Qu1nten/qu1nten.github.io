@@ -331,5 +331,34 @@
 						$menu._hide();
 
 			});
+			
+			
+			
+			
+			document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.querySelector(".image-slider");
+  const beforeImage = document.querySelector(".before-image");
+  const sliderHandle = document.querySelector(".slider-handle");
+
+  let isDragging = false;
+
+  sliderHandle.addEventListener("mousedown", function() {
+    isDragging = true;
+  });
+
+  document.addEventListener("mousemove", function(event) {
+    if (isDragging) {
+      const xPos = event.clientX - slider.offsetLeft;
+      const sliderWidth = slider.offsetWidth;
+      const xPosPercentage = (xPos / sliderWidth) * 100;
+
+      beforeImage.style.width = xPosPercentage + "%";
+    }
+  });
+
+  document.addEventListener("mouseup", function() {
+    isDragging = false;
+  });
+});
 
 })(jQuery);
