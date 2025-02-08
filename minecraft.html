@@ -1,27 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Quinten - Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon links here -->
 </head>
 <body>
     <nav class="nav">
-        <a href="/index.html" aria-label="Home">Home</a>
-        <a href="#about" aria-label="About">About</a>
-        <a href="#contact" aria-label="Contact">Contact</a>
+        <a href="index.html#projects" aria-label="Work">Work</a>
+        <a href="index.html#about" aria-label="About">About</a>
+        <a href="index.html#contact" aria-label="Contact">Contact</a>
     </nav>
 
     <div class="text-container">
-        <h1>Minecraft Project</h1>
-        <p>Details about the Minecraft project...</p>
+        <h1>MINECRAFT</h1>
+        <p>Minecraft is a game that I have been playing since 2010. In this game you are free to create anything, from a small house to a big city. For around 4 years now I have been building up a portfolio of the projects I have created in the game. I currently work as a freelance artist creating work for the Bedrock Marketplace run by Mojang. Along with paid commission work this has allowed me to work part time creating what I love.
+            <br>
+            <br>								All images shown below are solo creations.</p>
     </div>
 
-    <!-- Add more content specific to the Minecraft project here -->
+    <!-- Image Container -->
+    <div class="image-container">
+        <div class="image-grid">
+            <img src="images/1.jpg" alt="Minecraft Project 1" onclick="enlargeImage(this)">
+            <img src="images/2.jpg" alt="Minecraft Project 2" onclick="enlargeImage(this)">
+            <img src="images/3.jpg" alt="Minecraft Project 3" onclick="enlargeImage(this)">
+            <img src="images/3.jpg" alt="Minecraft Project 3" onclick="enlargeImage(this)">
+        </div>
+    </div>
 
-    <footer>
-        <p2>foot</p2>
-    </footer>
+
+    <div class="image-container">
+        <div class="image-grid">
+            <img src="images/1.jpg" alt="Minecraft Project 1" onclick="enlargeImage(this)">
+            <img src="images/2.jpg" alt="Minecraft Project 2" onclick="enlargeImage(this)">
+            <img src="images/2.jpg" alt="Minecraft Project 2" onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+    <div class="text-container">
+        <p>Minecraft is a game that I have been playing since 2010. In this game you are free to create anything, from a small house to a big city. For around 4 years now I have been building up a portfolio of the projects I have created in the game. I currently work as a freelance artist creating work for the Bedrock Marketplace run by Mojang. Along with paid commission work this has allowed me to work part time creating what I love.
+            <br>
+            <br>								All images shown below are solo creations.</p>
+    </div>
+
+    <div class="image-container">
+        <div class="image-grid">
+            <img src="images/1.jpg" alt="Minecraft Project 1" onclick="enlargeImage(this)">
+            <img src="images/2.jpg" alt="Minecraft Project 2" onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+    <div class="image-container">
+        <div class="image-grid">
+            <img src="images/6.jpg" alt="Minecraft Project 1" onclick="enlargeImage(this)">       
+        </div>
+    </div>
+
+    <script>
+        function enlargeImage(img) {
+            // Toggle the 'enlarged' class on the clicked image
+            img.classList.toggle('enlarged');
+
+            // If the image is enlarged, add an event listener to the document to handle clicks outside the image
+            if (img.classList.contains('enlarged')) {
+                document.addEventListener('click', function onClickOutside(event) {
+                    if (!img.contains(event.target)) {
+                        // Clicked outside the image, so remove the 'enlarged' class
+                        img.classList.remove('enlarged');
+                        // Remove the event listener after handling the click
+                        document.removeEventListener('click', onClickOutside);
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>
