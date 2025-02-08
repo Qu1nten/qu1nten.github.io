@@ -9,9 +9,9 @@
 </head>
 <body>
     <nav class="nav">
-        <a href="index.html#projects" aria-label="Work">Work</a>
-        <a href="index.html#about" aria-label="About">About</a>
-        <a href="index.html#contact" aria-label="Contact">Contact</a>
+        <a href="#projects">Work</a> 
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <div class="text-container">
@@ -78,4 +78,10 @@
         }
     </script>
 </body>
+<script>
+    window.addEventListener('hashchange', e => {
+        history.replaceState({}, "", location.hash.slice(1));
+    });
+</script>  
+
 </html>
