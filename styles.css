@@ -54,7 +54,7 @@ h1 {
 }
 
 p {
-    font-size: 30px;
+    font-size: 25px;
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
     animation-delay: 0.5s;
@@ -170,7 +170,7 @@ p2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 88%;
     padding: 20px;
 }
 
@@ -227,7 +227,7 @@ p2 {
     display: block;
     margin: auto;
     max-width: 70%; /* Adjust this value as needed */
-    max-height: 90vh; /* Adjust this value as needed */
+    max-height: 80vh; /* Adjust this value as needed */
     width: auto; /* Allow the width to adjust based on height */
     height: auto; /* Allow the height to adjust based on width */
     position: absolute;
@@ -236,6 +236,19 @@ p2 {
     transform: translate(-50%, -50%);
     object-fit: contain; /* Ensure the image fits within the container without distortion */
 }
+
+.modal-alt-text {
+    position: absolute;
+    bottom: 5%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #131010;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 10px;
+    font-family: Helvetica, sans-serif;
+}
+
 
 /* Navigation arrows */
 .arrow {
@@ -258,3 +271,37 @@ p2 {
     z-index: 1000;
 }
 
+
+
+
+
+
+
+
+.language-toggle {
+    display: flex; /* Align buttons horizontally */
+    gap: 10px; /* Space between buttons */
+    margin: 10px 0; /* Add some margin above and below the buttons */
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+.language-toggle button {
+    background: none;
+    border: none;
+    color: #F0BB78; /* Default text color */
+    font-size: 15px; /* Slightly smaller than the header but larger than the text */
+    font-weight: bold; /* Match the font weight of the navigation links */
+    cursor: pointer;
+    padding: 0; /* Remove padding to match the navigation links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.language-toggle button:hover {
+    color: #131010; /* Change text color on hover (matches the navigation links) */
+}
+
+@media (max-width: 768px) {
+    .language-toggle button {
+        font-size: 10px; /* Smaller font size for mobile */
+    }
+}
