@@ -21,7 +21,7 @@ nav {
     top: 20px; /* Distance from the top of the viewport */
     align-self: flex-end; /* Align to the right */
     z-index: 8000; /* Ensure it stays above other content */
-    margin-right: 20px; /* Add some spacing from the right edge */
+    margin-right: 80px; /* Add some spacing from the right edge */
     background: #F6F6F6;
 }
 
@@ -136,34 +136,6 @@ p2 {
     opacity: 0; /* Hide text on hover */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    header img {
-        width: 75px;
-    }
-
-    nav a {
-        font-size: 20px;
-    }
-
-
-    h1 {
-        font-size: 36px;
-    }
-
-    p {
-        font-size: 15px;
-    }
-}
-
 
 /* Image Container */
 .image-container {
@@ -195,18 +167,6 @@ p2 {
     transform: scale(1.05); /* Slightly zoom in on hover */
 }
 
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: 1fr; /* Stack images vertically on mobile */
-    }
-
-    .image-container {
-        padding: 10px; /* Reduce padding on mobile */
-    }
-}
-   
 
 
 /* Modal styles */
@@ -300,7 +260,49 @@ p2 {
     color: #131010; /* Change text color on hover (matches the navigation links) */
 }
 
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 @media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    header img {
+        width: 75px;
+    }
+
+    nav {
+        margin-right: 0px; /* Add some spacing from the right edge */
+    }
+
+    nav a {
+        font-size: 20px;
+    }
+
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Stack images vertically on mobile */
+    }
+
+    .image-container {
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
     .language-toggle button {
         font-size: 10px; /* Smaller font size for mobile */
     }
