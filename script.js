@@ -151,3 +151,10 @@ window.addEventListener('load', () => {
     const savedLanguage = localStorage.getItem('language') || 'english'; // Default to English
     changeLanguage(savedLanguage);
 });
+
+
+
+
+
+
+
