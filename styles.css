@@ -235,7 +235,9 @@ p2 {
 
 
 
-
+.language-toggle button.active {
+    color: #131010; /* Black color for the active button */
+}
 
 
 .language-toggle {
@@ -306,4 +308,35 @@ p2 {
     .language-toggle button {
         font-size: 10px; /* Smaller font size for mobile */
     }
+}
+
+
+/* Container for the videos */
+.video-container {
+    display: flex; /* Use Flexbox to align videos side by side */
+    justify-content: space-between; /* Space out the videos */
+    align-items: center; /* Center the videos vertically */
+    width: 88%; /* Full width of the container */
+    padding: 20px
+}
+
+/* Video styling */
+.video {
+    width: 49%; /* Slightly less than 50% to account for spacing */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the video covers the area without distortion */
+}
+
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* Stack videos vertically on smaller screens */
+        padding: 0px
+    }
+    .video {
+        width: 100%; /* Full width for each video on mobile */
+        margin-bottom: 10px; /* Add some space between stacked videos */
+    }
+ 
 }

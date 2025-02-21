@@ -118,6 +118,9 @@ if (!isMobile()) {
 const englishBtn = document.getElementById('englishBtn');
 const dutchBtn = document.getElementById('dutchBtn');
 
+
+
+
 // Function to change the language
 function changeLanguage(lang) {
     // Get all elements with data-english and data-dutch attributes
@@ -133,6 +136,10 @@ function changeLanguage(lang) {
 
     // Save the selected language to localStorage
     localStorage.setItem('language', lang);
+
+    // Update the active class on the buttons
+    englishBtn.classList.toggle('active', lang === 'english');
+    dutchBtn.classList.toggle('active', lang === 'dutch');
 }
 
 // Event listeners for the language toggle buttons
