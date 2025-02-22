@@ -144,6 +144,7 @@ p2 {
     align-items: center;
     width: 88%;
     padding: 20px;
+    animation: fadeIn 3s ease-in-out forwards;
 }
 
 /* Image Grid */
@@ -318,6 +319,8 @@ p2 {
     align-items: center; /* Center the videos vertically */
     width: 88%; /* Full width of the container */
     padding: 20px
+    
+    
 }
 
 /* Video styling */
@@ -325,7 +328,60 @@ p2 {
     width: 49%; /* Slightly less than 50% to account for spacing */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensure the video covers the area without distortion */
+    animation: fadeIn 3s ease-in-out forwards;
 }
+
+
+
+
+
+/* Add this to your existing CSS */
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 88%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.content-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 70%;
+    height: auto;
+    align-self: center; /* Center the image vertically */
+    margin-top: 200px; /* Add some top margin to move it down further */
+    animation: fadeIn 3s ease-in-out forwards;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsive design for mobile devices */
@@ -337,6 +393,23 @@ p2 {
     .video {
         width: 100%; /* Full width for each video on mobile */
         margin-bottom: 10px; /* Add some space between stacked videos */
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column; /* Stack items vertically */
+        }
+    
+        .text-container {
+            margin-right: 0; /* Remove the right margin */
+            margin-bottom: 20px; /* Add space between text and image */
+        }
+    
+        .about-image {
+            width: 100%; /* Make the image full width */
+            margin-top: 0; /* Reset any top margin if needed */
+            align-self: flex-start; /* Align the image to the left */
+        }
     }
  
 }
