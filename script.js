@@ -152,9 +152,3 @@ window.addEventListener('load', () => {
     changeLanguage(savedLanguage);
 });
 
-
-
-
-
-
-

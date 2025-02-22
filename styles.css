@@ -63,13 +63,6 @@ p {
 }
 
 
-p2 {
-    font-size: 24px;
-    animation: fadeIn 3s ease-in-out forwards;
-    animation-delay: 0.5s;
-    color: #C3905A;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -144,7 +137,6 @@ p2 {
     align-items: center;
     width: 88%;
     padding: 20px;
-    animation: fadeIn 3s ease-in-out forwards;
 }
 
 /* Image Grid */
@@ -266,12 +258,131 @@ p2 {
 
 
 
+/* Container for the videos */
+.video-container {
+    display: flex; /* Use Flexbox to align videos side by side */
+    justify-content: space-between; /* Space out the videos */
+    align-items: center; /* Center the videos vertically */
+    width: 88%; /* Full width of the container */
+    padding: 20px
+    
+    
+}
+
+/* Video styling */
+.video {
+    width: 49%; /* Slightly less than 50% to account for spacing */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the video covers the area without distortion */
+}
+
+
+
+
+
+/* Add this to your existing CSS */
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 88%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.content-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container {
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 70%;
+    height: auto;
+    align-self: center; /* Center the image vertically */
+    margin-top: 160px; /* Add some top margin to move it down further */
+    animation: fadeIn 3s ease-in-out forwards;
+
+}
+
+
+
+
+
+#contact {
+    padding: 50px 0;
+    text-align: center;
+    font-family: Helvetica, sans-serif; /* Match the font of your website */
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 25px; /* Match the font size of your other text */
+    color: #131010; /* Match the text color of your website */
+}
+
+.contact-info a {
+    color: #131010; /* Match the text color of your website */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #F0BB78; /* Match the hover color of your website */
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+
 @media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* Stack videos vertically on smaller screens */
+        padding: 0px
+    }
+    .video {
+        width: 100%; /* Full width for each video on mobile */
+        margin-bottom: 10px; /* Add some space between stacked videos */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .text-container {
+        margin-right: 0; /* Remove the right margin */
+        margin-bottom: 20px; /* Add space between text and image */
+    }
+
+    .about-image {
+        width: 100%; /* Make the image full width */
+        margin-top: 0; /* Reset any top margin if needed */
+        align-self: flex-start; /* Align the image to the left */
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
         width: 100%;
@@ -312,104 +423,3 @@ p2 {
 }
 
 
-/* Container for the videos */
-.video-container {
-    display: flex; /* Use Flexbox to align videos side by side */
-    justify-content: space-between; /* Space out the videos */
-    align-items: center; /* Center the videos vertically */
-    width: 88%; /* Full width of the container */
-    padding: 20px
-    
-    
-}
-
-/* Video styling */
-.video {
-    width: 49%; /* Slightly less than 50% to account for spacing */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the video covers the area without distortion */
-    animation: fadeIn 3s ease-in-out forwards;
-}
-
-
-
-
-
-/* Add this to your existing CSS */
-.about-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 88%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.title-column {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.content-column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-}
-
-.text-container {
-    margin-bottom: 20px;
-}
-
-.about-image {
-    width: 70%;
-    height: auto;
-    align-self: center; /* Center the image vertically */
-    margin-top: 200px; /* Add some top margin to move it down further */
-    animation: fadeIn 3s ease-in-out forwards;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-    .video-container {
-        flex-direction: column; /* Stack videos vertically on smaller screens */
-        padding: 0px
-    }
-    .video {
-        width: 100%; /* Full width for each video on mobile */
-        margin-bottom: 10px; /* Add some space between stacked videos */
-    }
-
-    @media (max-width: 768px) {
-        .about-container {
-            flex-direction: column; /* Stack items vertically */
-        }
-    
-        .text-container {
-            margin-right: 0; /* Remove the right margin */
-            margin-bottom: 20px; /* Add space between text and image */
-        }
-    
-        .about-image {
-            width: 100%; /* Make the image full width */
-            margin-top: 0; /* Reset any top margin if needed */
-            align-self: flex-start; /* Align the image to the left */
-        }
-    }
- 
-}
