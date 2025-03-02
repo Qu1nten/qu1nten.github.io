@@ -267,6 +267,7 @@ p {
     padding: 20px
     
     
+    
 }
 
 /* Video styling */
@@ -277,7 +278,21 @@ p {
 }
 
 
+/* Container for the videos */
+.video-container2 {
+    display: flex; /* Use Flexbox to align videos side by side */
+    justify-content: space-between; /* Space out the videos */
+    align-items: center; /* Center the videos vertically */
+    width: 88%; /* Full width of the container */
+    padding: 20px   
+}
 
+/* Video styling */
+.video2 {
+    width: 100%; /* Slightly less than 50% to account for spacing */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the video covers the area without distortion */
+}
 
 
 /* Add this to your existing CSS */
