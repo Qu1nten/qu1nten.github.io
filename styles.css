@@ -135,7 +135,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 88%;
+    width: 98%; /* bij 99 of 100 wordt pagina horizontaal */
     padding: 20px;
 }
 
@@ -263,7 +263,7 @@ p {
     display: flex; /* Use Flexbox to align videos side by side */
     justify-content: space-between; /* Space out the videos */
     align-items: center; /* Center the videos vertically */
-    width: 88%; /* Full width of the container */
+    width: 89%; /* Full width of the container */
     padding: 20px
     
     
