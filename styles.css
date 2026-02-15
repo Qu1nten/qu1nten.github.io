@@ -17,11 +17,11 @@ body {
 }
 
 nav {
-    position: sticky; /* Make the navigation sticky */
-    top: 20px; /* Distance from the top of the viewport */
-    align-self: flex-end; /* Align to the right */
-    z-index: 8000; /* Ensure it stays above other content */
-    margin-right: 80px; /* Add some spacing from the right edge */
+    position: sticky;
+    top: 20px;
+    align-self: flex-end;
+    z-index: 8000;
+    margin-right: 80px;
     background: #F6F6F6;
 }
 
@@ -75,22 +75,22 @@ p {
     position: relative;
     border: 0px solid #dddddd00;
     cursor: pointer;
-    transition: z-index 0.3s ease; /* Smooth transition for z-index */
+    transition: z-index 0.3s ease;
 }
 
 .card img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease; /* Smooth zoom transition */
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    z-index: 10; /* Bring the hovered card to the front */
+    z-index: 10;
 }
 
 .card:hover img {
-    transform: scale(1.05); /* Zoom in slightly on hover */
+    transform: scale(1.05);
 }
 
 .card::before {
@@ -100,14 +100,14 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(229, 229, 230, 0.3); /* Transparent overlay */
+    background-color: rgba(229, 229, 230, 0.3);
     transition: background-color 0.3s ease;
-    pointer-events: none; /* Ensures the overlay doesn't block hover */
-    z-index: 1; /* Places the overlay above the image */
+    pointer-events: none;
+    z-index: 1;
 }
 
 .card:hover::before {
-    background-color: rgba(0, 123, 255, 0); /* Remove overlay on hover */
+    background-color: rgba(0, 123, 255, 0);
 }
 
 .card-text {
@@ -121,12 +121,12 @@ p {
     opacity: 1;
     font-weight: bold;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Ensures the text doesn't interfere with hover */
-    z-index: 2; /* Places the text above the overlay */
+    pointer-events: none;
+    z-index: 2;
 }
 
 .card:hover .card-text {
-    opacity: 0; /* Hide text on hover */
+    opacity: 0;
 }
 
 
@@ -135,64 +135,71 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%; /* bij 99 of 100 wordt pagina horizontaal */
+    width: 98%;
     padding: 20px;
 }
 
 /* Image Grid */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for desired image width */
-    gap: 20px; /* Space between images */
-    max-width: 1700px; /* Maximum width of the grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1700px;
     width: 100%;
-    justify-content: center; /* Center the grid items */
+    justify-content: center;
 }
 
 .image-grid img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* Smooth zoom transition */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .image-grid img:hover {
-    transform: scale(1.05); /* Slightly zoom in on hover */
+    transform: scale(1.05);
 }
-
 
 
 /* Modal styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #f6f6f6c4; /* Semi-transparent black background */
-    overflow: auto;
+    background-color: #f6f6f6c4;
+    overflow: hidden; /* Prevent body scroll bars from appearing */
 }
 
 /* Modal content (image) */
 .modal-content {
     display: block;
     margin: auto;
-    max-width: 70%; /* Adjust this value as needed */
-    max-height: 80vh; /* Adjust this value as needed */
-    width: auto; /* Allow the width to adjust based on height */
-    height: auto; /* Allow the height to adjust based on width */
+    max-width: 70%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: contain; /* Ensure the image fits within the container without distortion */
+    /* Initial transform. JS will update this. */
+    transform: translate(-50%, -50%) scale(1); 
+    object-fit: contain;
+    
+    /* Important: We removed 'transition' here so the scroll zoom feels instant */
+    cursor: grab;
+}
+
+.modal-content:active {
+    cursor: grabbing;
 }
 
 .modal-alt-text {
     position: absolute;
-    bottom: 5%; /* Adjust this value as needed */
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     color: #131010;
@@ -200,6 +207,7 @@ p {
     text-align: center;
     padding: 5px 10px;
     font-family: Helvetica, sans-serif;
+    pointer-events: none; /* Let clicks pass through to background */
 }
 
 
@@ -225,73 +233,65 @@ p {
 }
 
 
-
-
-
 .language-toggle button.active {
-    color: #131010; /* Black color for the active button */
+    color: #131010;
 }
 
 
 .language-toggle {
-    display: flex; /* Align buttons horizontally */
-    gap: 10px; /* Space between buttons */
-    margin: 10px 0; /* Add some margin above and below the buttons */
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
     animation: fadeIn 3s ease-in-out forwards;
 }
 
 .language-toggle button {
     background: none;
     border: none;
-    color: #F0BB78; /* Default text color */
-    font-size: 15px; /* Slightly smaller than the header but larger than the text */
-    font-weight: bold; /* Match the font weight of the navigation links */
+    color: #F0BB78;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
-    padding: 0; /* Remove padding to match the navigation links */
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    padding: 0;
+    transition: color 0.3s ease;
 }
 
 .language-toggle button:hover {
-    color: #131010; /* Change text color on hover (matches the navigation links) */
+    color: #131010;
 }
-
-
 
 
 /* Container for the videos */
 .video-container {
-    display: flex; /* Use Flexbox to align videos side by side */
-    justify-content: space-between; /* Space out the videos */
-    align-items: center; /* Center the videos vertically */
-    width: 89%; /* Full width of the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 89%;
     padding: 20px
-    
-    
-    
 }
 
 /* Video styling */
 .video {
-    width: 49%; /* Slightly less than 50% to account for spacing */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the video covers the area without distortion */
+    width: 49%;
+    height: auto;
+    object-fit: cover;
 }
 
 
 /* Container for the videos */
 .video-container2 {
-    display: flex; /* Use Flexbox to align videos side by side */
-    justify-content: space-between; /* Space out the videos */
-    align-items: center; /* Center the videos vertically */
-    width: 88%; /* Full width of the container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
     padding: 20px   
 }
 
 /* Video styling */
 .video2 {
-    width: 100%; /* Slightly less than 50% to account for spacing */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the video covers the area without distortion */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 
@@ -323,48 +323,33 @@ p {
 .about-image {
     width: 70%;
     height: auto;
-    align-self: center; /* Center the image vertically */
-    margin-top: 160px; /* Add some top margin to move it down further */
+    align-self: center;
+    margin-top: 160px;
     animation: fadeIn 3s ease-in-out forwards;
-
 }
-
-
-
-
 
 #contact {
     padding: 50px 0;
     text-align: center;
-    font-family: Helvetica, sans-serif; /* Match the font of your website */
+    font-family: Helvetica, sans-serif;
 }
 
 .contact-info {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 25px; /* Match the font size of your other text */
-    color: #131010; /* Match the text color of your website */
+    font-size: 25px;
+    color: #131010;
 }
 
 .contact-info a {
-    color: #131010; /* Match the text color of your website */
+    color: #131010;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #F0BB78; /* Match the hover color of your website */
+    color: #F0BB78;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 @keyframes fadeIn {
@@ -375,27 +360,27 @@ p {
 
 @media (max-width: 768px) {
     .video-container {
-        flex-direction: column; /* Stack videos vertically on smaller screens */
+        flex-direction: column;
         padding: 0px
     }
     .video {
-        width: 100%; /* Full width for each video on mobile */
-        margin-bottom: 10px; /* Add some space between stacked videos */
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .about-container {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
     }
 
     .text-container {
-        margin-right: 0; /* Remove the right margin */
-        margin-bottom: 20px; /* Add space between text and image */
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
     .about-image {
-        width: 100%; /* Make the image full width */
-        margin-top: 0; /* Reset any top margin if needed */
-        align-self: flex-start; /* Align the image to the left */
+        width: 100%;
+        margin-top: 0;
+        align-self: flex-start;
     }
 
     .projects-grid {
@@ -408,14 +393,12 @@ p {
     }
 
     nav {
-        margin-right: 0px; /* Add some spacing from the right edge */
+        margin-right: 0px;
     }
 
     nav a {
         font-size: 20px;
     }
-
-  
 
     h1 {
         font-size: 36px;
@@ -426,16 +409,14 @@ p {
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* Stack images vertically on mobile */
+        grid-template-columns: 1fr;
     }
 
     .image-container {
-        padding: 10px; /* Reduce padding on mobile */
+        padding: 10px;
     }
 
     .language-toggle button {
-        font-size: 10px; /* Smaller font size for mobile */
+        font-size: 10px;
     }
 }
-
-
