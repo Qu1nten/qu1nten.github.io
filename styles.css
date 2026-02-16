@@ -48,15 +48,17 @@ h1 {
     font-size: 80px;
     margin-bottom: 10px;
     opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.2s;
     color: #131010;
 
 }
 
+
 p {
     font-size: 20px;
     opacity: 0;
-    animation: fadeIn 3s ease-in-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.5s;
     color: #131010;
     
@@ -76,7 +78,27 @@ p {
     border: 0px solid #dddddd00;
     cursor: pointer;
     transition: z-index 0.3s ease;
+    animation: fadeIn 1s ease-in-out both;
+    animation-delay: 0s;
 }
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
+.card:nth-child(6) { animation-delay: 0.5s; }
+.card:nth-child(7) { animation-delay: 0.6s; }
+.card:nth-child(8) { animation-delay: 0.7s; }
+.card:nth-child(9) { animation-delay: 0.8s; }
+.card:nth-child(10) { animation-delay: 0.9s; }
+.card:nth-child(11) { animation-delay: 1.0s; }
+.card:nth-child(12) { animation-delay: 1.1s; }
+.card:nth-child(13) { animation-delay: 1.2s; }
+.card:nth-child(14) { animation-delay: 1.3s; }
+.card:nth-child(15) { animation-delay: 1.4s; }
+.card:nth-child(16) { animation-delay: 1.5s; }
+
 
 .card img {
     width: 100%;
@@ -154,6 +176,9 @@ p {
     height: auto;
     transition: transform 0.3s ease;
     cursor: pointer;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both;
+    animation-delay: 0.5s; 
 }
 
 .image-grid img:hover {
@@ -242,7 +267,7 @@ p {
     display: flex;
     gap: 10px;
     margin: 10px 0;
-    animation: fadeIn 3s ease-in-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 .language-toggle button {
@@ -267,7 +292,10 @@ p {
     justify-content: space-between;
     align-items: center;
     width: 89%;
-    padding: 20px
+    padding: 20px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both; /* Same effect as text */
+    animation-delay: 0.5s; /* Waits 1s so it appears after the text */ 
 }
 
 /* Video styling */
@@ -284,7 +312,10 @@ p {
     justify-content: space-between;
     align-items: center;
     width: 88%;
-    padding: 20px   
+    padding: 20px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both; /* Same effect as text */
+    animation-delay: 0.5s; /* Waits 1s so it appears after the text */ 
 }
 
 /* Video styling */
@@ -325,7 +356,7 @@ p {
     height: auto;
     align-self: center;
     margin-top: 160px;
-    animation: fadeIn 3s ease-in-out forwards;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 #contact {
@@ -418,5 +449,40 @@ p {
 
     .language-toggle button {
         font-size: 10px;
+    }
+}
+
+/* Link Container - Matches text-container alignment */
+.video-link-container {
+    width: 89%;
+    text-align: left;
+    margin-bottom: 20px; /* Space between link and video */
+    margin-top: 10px;    /* Space between text and link */
+    
+    /* Animation to match your paragraph text */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.5s; 
+}
+
+/* The Link Styling */
+.video-link {
+    font-size: 20px;       /* Matches your paragraph size */
+    font-weight: bold;     /* Makes it stand out slightly */
+    text-decoration: none; /* Removes standard underline */
+    color: #131010;        /* Default Black */
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.video-link:hover {
+    color: #F0BB78;        /* Turns Yellow on hover */
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .video-link {
+        font-size: 15px;   /* Matches your mobile paragraph size */
     }
 }
