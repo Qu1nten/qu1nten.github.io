@@ -28,7 +28,7 @@ nav {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #131010;
+    color: #222222;
     font-size: 40px;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -50,7 +50,7 @@ h1 {
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.2s;
-    color: #131010;
+    color: #222222;
 
 }
 
@@ -60,7 +60,7 @@ p {
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.5s;
-    color: #131010;
+    color: #222222;
     
 }
 
@@ -77,9 +77,10 @@ p {
     position: relative;
     border: 0px solid #dddddd00;
     cursor: pointer;
-    transition: z-index 0.3s ease;
+    /* CHANGED: Use a normal transition so the value drops gradually */
+    transition: z-index 0.5s; 
     animation: fadeIn 1s ease-in-out both;
-    animation-delay: 0s;
+    z-index: 1; 
 }
 
 .card:nth-child(1) { animation-delay: 0s; }
@@ -104,11 +105,14 @@ p {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .card:hover {
-    z-index: 10;
+    /* CHANGED: Ensure this is significantly higher than the base z-index */
+    z-index: 100;
+    /* CHANGED: Change z-index instantly on hover */
+    transition: z-index 0s; 
 }
 
 .card:hover img {
@@ -122,14 +126,15 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(229, 229, 230, 0.3);
-    transition: background-color 0.3s ease;
+    background-color: rgba(229, 229, 230, 0.25);
+    transition: background-color 0.5s ease, transform 0.5s ease;
     pointer-events: none;
     z-index: 1;
 }
 
 .card:hover::before {
     background-color: rgba(0, 123, 255, 0);
+    transform: scale(1.05);
 }
 
 .card-text {
@@ -142,7 +147,7 @@ p {
     text-align: center;
     opacity: 1;
     font-weight: bold;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
     z-index: 2;
 }
@@ -369,11 +374,11 @@ p {
     max-width: 800px;
     margin: 0 auto;
     font-size: 25px;
-    color: #131010;
+    color: #222222;
 }
 
 .contact-info a {
-    color: #131010;
+    color: #222222;
     text-decoration: none;
     transition: color 0.3s ease;
 }
