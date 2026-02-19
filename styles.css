@@ -40,27 +40,18 @@ nav a:hover {
 
 .text-container {
     text-align: left;
-    width: 98%;           /* Match .image-container */
-    max-width: 1700px;    /* Match .image-grid */
-    margin: 0 auto;       /* Center the container on the page */
+    width: 89%;
     margin-bottom: 10px;
 }
 
 h1 {
     font-size: 80px;
-    color: #222222;
-    text-align: left;
-    width: 100%;          /* Now fills the 1700px parent container */
     margin-bottom: 10px;
-    
-    /* Optical Fix: Nudge the first letter slightly left to 
-       offset the font's natural side-padding */
-    transform: translateX(-4px); 
-
-    /* Original animations */
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0s;
+    color: #222222;
+
 }
 
 
@@ -312,65 +303,45 @@ p {
 }
 
 
+/* Container for the videos */
 .video-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 98%;             /* Matches .image-container width */
-    max-width: 1700px;      /* Matches .image-grid max-width */
-    margin: 0 auto;         /* Centered on page */
+    width: 89%;
     padding: 20px;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out both;
-    animation-delay: 0.5s;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both; /* Same effect as text */
+    animation-delay: 0.5s; /* Waits 1s so it appears after the text */ 
 }
 
-/* Specific layout for the Minecraft page with two videos */
-.video-container.side-by-side {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Video styling - now replaces .video2 */
+/* Video styling */
 .video {
+    width: 49%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Container for the videos */
+.video-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+    padding: 20px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both; /* Same effect as text */
+    animation-delay: 0.5s; /* Waits 1s so it appears after the text */ 
+}
+
+/* Video styling */
+.video2 {
     width: 100%;
     height: auto;
     object-fit: cover;
-    display: block;
 }
 
-@media (max-width: 768px) {
-    .text-container, .video-container, .image-container {
-        width: 100%;
-        padding: 0 20px; /* Gives everything the same "gutters" on mobile */
-    }
-
-    nav {
-        width: 100%;
-        margin-right: 0;
-        padding-right: 20px; /* Matches the content padding */
-        justify-content: center; /* Optional: centers links on mobile */
-    }
-}
-
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .video-container {
-        width: 100%;
-        padding: 10px 0; /* Ensures it stays centered without side-padding offset */
-    }
-
-    .video-container.side-by-side {
-        grid-template-columns: 1fr; /* Stacks videos on mobile */
-    }
-
-    .video {
-        width: 90%;      /* Keeps it centered with a small margin */
-        margin: 0 auto;
-    }
-}
 
 /* Add this to your existing CSS */
 .about-container {
@@ -393,6 +364,9 @@ p {
     flex-direction: column;
 }
 
+.text-container {
+    margin-bottom: 20px;
+}
 
 .about-image {
     width: 70%;
@@ -446,6 +420,10 @@ p {
         flex-direction: column;
     }
 
+    .text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 
     .about-image {
         width: 100%;
@@ -463,6 +441,7 @@ p {
     }
 
     nav {
+<<<<<<< HEAD
     position: sticky;
     top: 20px;
     width: 98%;           /* Match the width of the content below */
@@ -474,20 +453,18 @@ p {
     background: #F6F6F6;
     padding-bottom: 10px;
 }
+=======
+        margin-right: 0px;
+    }
+>>>>>>> parent of 18d3191 (better text & image alignmet)
 
     nav a {
         font-size: 20px;
     }
 
-   @media (max-width: 768px) {
     h1 {
-        font-size: 40px;
-        width: 100%;
-        padding: 0 20px;
-        transform: translateX(0); /* Reset fix on mobile as padding handles it */
-        box-sizing: border-box;
+        font-size: 36px;
     }
-}
 
     p {
         font-size: 15px;
@@ -508,28 +485,15 @@ p {
 
 /* Link Container - Matches text-container alignment */
 .video-link-container {
+    width: 89%;
     text-align: left;
+    margin-bottom: 20px; /* Space between link and video */
+    margin-top: 10px;    /* Space between text and link */
     
-    /* Alignment Logic - Matches images and headers */
-    width: 98%;           
-    max-width: 1700px;    
-    margin: 0 auto;       /* Centers the container box */
-    
-    margin-bottom: 20px;  /* Space between link and video */
-    margin-top: 10px;     /* Space between text and link */
-    
-    /* Your original animation */
+    /* Animation to match your paragraph text */
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.5s; 
-}
-
-@media (max-width: 768px) {
-    .video-link-container {
-        width: 100%;
-        padding: 0 20px;  /* Matches your new standard mobile gutter */
-        box-sizing: border-box;
-    }
 }
 
 /* The Link Styling */
