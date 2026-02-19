@@ -465,11 +465,11 @@ p {
     nav {
     position: sticky;
     top: 20px;
-    width: 98%;
-    max-width: 1700px;
-    margin: 0 auto;      /* Centers the nav box */
+    width: 98%;           /* Match the width of the content below */
+    max-width: 1700px;    /* Match the max-width of the content below */
+    margin: 0 auto;       /* Center the nav bar itself */
     display: flex;
-    justify-content: flex-end; /* Flushes links to the right edge of the 1700px box */
+    justify-content: flex-end; /* Keeps the links on the right side */
     z-index: 8000;
     background: #F6F6F6;
     padding-bottom: 10px;
