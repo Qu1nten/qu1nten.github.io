@@ -75,14 +75,13 @@ if (modal) {
             setTransform();
         });
 
-        modalImage.addEventListener('mousedown', (e) => {
+         modalImage.addEventListener('mousedown', (e) => {
             e.preventDefault();
-            if (scale > 1) {
-                isDragging = true;
-                startX = e.clientX - pointX;
-                startY = e.clientY - pointY;
-                modalImage.style.cursor = 'grabbing';
-            }
+            // REMOVED: if (scale > 1) { ... }
+            isDragging = true;
+            startX = e.clientX - pointX;
+            startY = e.clientY - pointY;
+            modalImage.style.cursor = 'grabbing';
         });
 
         window.addEventListener('mousemove', (e) => {
@@ -199,3 +198,18 @@ if (contactNavLink) {
         // If not visible, the Observer above will catch it when the scroll finishes.
     });
 }
+
+
+// Add Keyboard Navigation
+window.addEventListener('keydown', (e) => {
+    // Only trigger if the modal is currently visible
+    if (modal.style.display === 'block') {
+        if (e.key === 'ArrowRight') {
+            nextImage();
+        } else if (e.key === 'ArrowLeft') {
+            prevImage();
+        } else if (e.key === 'Escape') {
+            closeModal();
+        }
+    }
+});

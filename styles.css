@@ -237,11 +237,21 @@ p {
     text-align: center;
     padding: 5px 10px;
     font-family: Helvetica, sans-serif;
-    pointer-events: none; /* Let clicks pass through to background */
+    pointer-events: none; 
 }
 
 
 /* Navigation arrows */
+
+.arrow {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow:hover {
+    color: #F0BB78; 
+    transform: translateY(-50%) scale(1.2); 
+}
+
 .arrow {
     position: absolute;
     top: 50%;
