@@ -22,7 +22,6 @@ nav {
     align-self: flex-end;
     z-index: 8000;
     margin-right: 80px;
-    background: #F6F6F6;
 }
 
 nav a {
@@ -111,8 +110,8 @@ p {
 
 
 .card img {
-    width: 100%;
-    height: auto;
+    width: 96%;
+    height: 96%;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -133,9 +132,9 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(229, 229, 230, 0.25);
+    width: 96%;
+    height: 96%;
+    background-color: rgba(229, 229, 230, 0.336);
     transition: background-color 0.5s ease, transform 0.5s ease;
     pointer-events: none;
     z-index: 1;
