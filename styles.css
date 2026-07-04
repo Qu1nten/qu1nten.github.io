@@ -2,6 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
+.text-container p {
+    white-space: pre-line;
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -22,6 +27,7 @@ nav {
     align-self: flex-end;
     z-index: 8000;
     margin-right: 80px;
+    
 }
 
 nav a {
@@ -39,14 +45,15 @@ nav a:hover {
 
 .text-container {
     text-align: left;
-    width: 98%;           /* Match .image-container */
+    width: 95%;           /* Match .image-container */
     max-width: 1700px;    /* Match .image-grid */
     margin: 0 auto;       /* Center the container on the page */
     margin-bottom: 10px;
+    
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 70px;
     color: #222222;
     text-align: left;
     width: 100%;          /* Now fills the 1700px parent container */
@@ -64,7 +71,7 @@ h1 {
 
 
 p {
-    font-size: 20px;
+    font-size: 16px;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.2s;
@@ -170,7 +177,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;
+    width: 95%;
     padding: 20px;
 }
 
@@ -315,7 +322,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;             /* Matches .image-container width */
+    width: 95%;             /* Matches .image-container width */
     max-width: 1700px;      /* Matches .image-grid max-width */
     margin: 0 auto;         /* Centered on page */
     padding: 20px;
@@ -510,7 +517,7 @@ p {
     text-align: left;
     
     /* Alignment Logic - Matches images and headers */
-    width: 98%;           
+    width: 95%;           
     max-width: 1700px;    
     margin: 0 auto;       /* Centers the container box */
     
@@ -533,7 +540,7 @@ p {
 
 /* The Link Styling */
 .video-link {
-    font-size: 20px;       /* Matches your paragraph size */
+    font-size: 15px;       /* Matches your paragraph size */
     font-weight: bold;     /* Makes it stand out slightly */
     text-decoration: none; /* Removes standard underline */
     color: #131010;        /* Default Black */
