@@ -386,7 +386,7 @@ p {
 }
 
 @media (max-width: 768px) {
-    .text-container, .video-container, .image-container {
+    .text-container, .video-container,  {
         width: 90%;
         padding: 0 20px; /* Gives everything the same "gutters" on mobile */
         margin: 0 auto;
