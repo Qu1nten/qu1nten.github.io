@@ -74,7 +74,7 @@ body.scrolled .nav-name {
 
 .text-container {
     text-align: left;
-    width: 98%;           /* Match .image-container */
+    width: 90%;           /* Match .image-container */
     max-width: 1700px;    /* Match .image-grid */
     margin: 0 auto;       /* Center the container on the page */
     margin-bottom: 10px;
@@ -113,7 +113,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
     max-width: 1700px;
-    width: 100%;
+    width: 90%;
 }
 
 .card {
@@ -207,7 +207,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;           /* Match .text-container */
+    width: 90%;           /* Match .text-container */
     max-width: 1700px;    /* Match the site-wide content column */
     margin: 0 auto;
     padding: 20px 0;      /* Vertical spacing only — horizontal padding would make it narrower than the text */
@@ -222,6 +222,11 @@ p {
     max-width: 1700px;
     width: 100%;
     justify-content: center;
+}
+
+/* Narrower single-image grid (e.g. fenix2) — smaller than the full content width */
+.image-grid-narrow {
+    max-width: 1200px;
 }
 
 .image-grid img {
@@ -355,7 +360,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;             /* Matches .image-container width */
+    width: 90%;             /* Matches .image-container width */
     max-width: 1700px;      /* Matches .image-grid max-width */
     margin: 0 auto;         /* Centered on page */
     padding: 20px 0;        /* Vertical spacing only, so the video is as wide as the text */
@@ -407,7 +412,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 40px;
-    width: 98%;           /* Match .text-container / .image-container on other pages */
+    width: 90%;           /* Match .text-container / .image-container on other pages */
     max-width: 1700px;    /* Match the site-wide content column */
     margin: 0 auto;
     padding: 0;
@@ -559,7 +564,7 @@ p {
     text-align: left;
     
     /* Alignment Logic - Matches images and headers */
-    width: 98%;           
+    width: 90%;           
     max-width: 1700px;    
     margin: 0 auto;       /* Centers the container box */
     
