@@ -139,6 +139,12 @@ window.addEventListener('load', () => {
     changeLanguage(savedLanguage);
 });
 
+// --- NAV NAME ON SCROLL ---
+// Fades the name in the nav bar in/out (see .nav-name in styles.css)
+window.addEventListener('scroll', () => {
+    document.body.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
 // --- HASH CHANGE HANDLER ---
 window.addEventListener('hashchange', e => {
     history.replaceState({}, "", location.hash.slice(1));

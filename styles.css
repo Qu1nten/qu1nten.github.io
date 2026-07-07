@@ -12,16 +12,21 @@ body {
     font-family: Helvetica, sans-serif;
     text-align: center;
     position: relative;
-    padding-top: 10px;
+    /* No margin/padding-top: the nav bar must reach the very top and the screen edges */
+    margin: 0;
     padding-bottom: 10px;
 }
 
 nav {
     position: sticky;
-    top: 20px;
-    align-self: flex-end;
+    top: 0;                    /* Stick flush against the top of the screen */
+    align-self: stretch;       /* Full-width bar, edge to edge */
+    display: flex;
+    justify-content: flex-end; /* Keep the links on the right */
     z-index: 8000;
-    margin-right: 80px;
+    background-color: #f6f6f6; /* The bar — content disappears behind it when scrolling */
+    padding: 15px 80px 10px 20px; /* Right inset replaces the old margin-right: 80px */
+    box-sizing: border-box;
 }
 
 nav a {
@@ -35,6 +40,36 @@ nav a {
 
 nav a:hover {
     color: #F0BB78;
+}
+
+/* Name on the left of the nav bar — same font/size as the links (it's a nav a),
+   hidden at the top of the page, fades in once you scroll (see script.js) */
+.nav-name {
+    margin-right: auto;   /* Pushes Work/About/Contact to the right */
+    white-space: nowrap;  /* Never break the name onto two lines */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* Not clickable while invisible */
+}
+
+body.scrolled .nav-name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Between 769-950px the 40px name + links don't fit side by side */
+@media (max-width: 950px) {
+    .nav-name { display: none; }
+}
+
+/* Below 768px the links shrink to 20px, so the name fits again */
+@media (max-width: 768px) {
+    .nav-name { display: block; }
+}
+
+/* On very narrow phones even the 20px version collides with the links */
+@media (max-width: 480px) {
+    .nav-name { display: none; }
 }
 
 .text-container {
@@ -172,8 +207,11 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 98%;
-    padding: 20px;
+    width: 98%;           /* Match .text-container */
+    max-width: 1700px;    /* Match the site-wide content column */
+    margin: 0 auto;
+    padding: 20px 0;      /* Vertical spacing only — horizontal padding would make it narrower than the text */
+    box-sizing: border-box;
 }
 
 /* Image Grid */
@@ -320,7 +358,8 @@ p {
     width: 98%;             /* Matches .image-container width */
     max-width: 1700px;      /* Matches .image-grid max-width */
     margin: 0 auto;         /* Centered on page */
-    padding: 20px;
+    padding: 20px 0;        /* Vertical spacing only, so the video is as wide as the text */
+    box-sizing: border-box;
     opacity: 0;
     animation: fadeIn 2s ease-in-out both;
     animation-delay: 0.5s;
@@ -350,10 +389,7 @@ p {
     }
 
     nav {
-        width: 100%;
-        margin-right: 0;
-        padding-right: 20px; /* Matches the content padding */
-        justify-content: center; /* Optional: centers links on mobile */
+        padding: 10px 20px; /* Smaller right inset on mobile, matches the content gutters */
     }
 }
 
@@ -363,11 +399,6 @@ p {
     
     .video-container.side-by-side {
         grid-template-columns: 1fr; /* Stacks videos on mobile */
-    }
-
-    .video {
-        width: 90%;      /* Keeps it centered with a small margin */
-        margin: 0 auto;
     }
 }
 
@@ -449,7 +480,8 @@ p {
 @media (max-width: 768px) {
     .video-container {
         flex-direction: column;
-        padding: 0px
+        /* No padding override here — the shared mobile rule gives it the same
+           20px gutters as the text, keeping video and text edges aligned */
     }
     .video {
         width: 100%;
@@ -489,18 +521,8 @@ p {
         width: 75px;
     }
 
-    nav {
-    position: sticky;
-    top: 20px;
-    width: 98%;           /* Match the width of the content below */
-    max-width: 1700px;    /* Match the max-width of the content below */
-    margin: 0 auto;       /* Center the nav bar itself */
-    display: flex;
-    justify-content: flex-end; /* Keeps the links on the right side */
-    z-index: 8000;
-    background: #f6f6f600;
-    padding-bottom: 10px;
-}
+    /* Nav bar styling now lives in the base nav rule (full-width sticky bar);
+       only the mobile padding differs, set in the media block above */
 
     nav a {
         font-size: 20px;
@@ -524,9 +546,8 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .image-container {
-        padding: 10px;
-    }
+    /* No .image-container padding override — the shared mobile rule
+       (width 90%, padding 0 20px) keeps images aligned with the text */
 
     .language-toggle button {
         font-size: 10px;
@@ -555,7 +576,8 @@ p {
     .video-link-container {
         width: 90%;
         padding: 0 20px;  /* Matches your new standard mobile gutter */
-  
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 }
 
