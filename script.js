@@ -145,9 +145,16 @@ window.addEventListener('scroll', () => {
     document.body.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// --- HASH CHANGE HANDLER ---
-window.addEventListener('hashchange', e => {
-    history.replaceState({}, "", location.hash.slice(1));
+// --- RESTORE HASH SCROLL AFTER IMAGES LOAD ---
+// The project images have no fixed dimensions, so at first paint the anchor
+// target sits near the top. The browser jumps there before the images load and
+// push everything down, leaving the page stranded at the top. Re-scroll once
+// everything has settled so reloading a URL like /#contact lands correctly.
+window.addEventListener('load', () => {
+    if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) target.scrollIntoView();
+    }
 });
 
 // --- CONTACT BUTTON FLASH ANIMATION ---
