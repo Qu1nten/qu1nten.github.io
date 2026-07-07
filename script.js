@@ -19,7 +19,7 @@ if (modal) {
     let isDragging = false;
 
     function isMobile() {
-        return window.innerWidth <= 768;
+        return window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches;
     }
 
     function setTransform() {

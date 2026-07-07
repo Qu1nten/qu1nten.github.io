@@ -243,6 +243,18 @@ p {
     transform: scale(1.02);
 }
 
+/* On touch devices (and narrow screens) a tap triggers :hover and makes the
+   enlargement "stick". These devices also don't open the modal (see isMobile()
+   in script.js), so disable the hover zoom and the clickable cursor there. */
+@media (hover: none), (max-width: 768px) {
+    .image-grid img:hover {
+        transform: none;
+    }
+    .image-grid img {
+        cursor: default;
+    }
+}
+
 
 /* Modal styles */
 .modal {
