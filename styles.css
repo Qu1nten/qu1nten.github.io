@@ -2,18 +2,13 @@ html {
     scroll-behavior: smooth;
 }
 
-.text-container p {
-    white-space: pre-line;
-}
-
-
 body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background: #F6F6F6;
+    background-color: #f6f6f6;
     font-family: Helvetica, sans-serif;
     text-align: center;
     position: relative;
@@ -27,13 +22,12 @@ nav {
     align-self: flex-end;
     z-index: 8000;
     margin-right: 80px;
-    
 }
 
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #222222;
+    color: #323232;
     font-size: 40px;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -45,16 +39,15 @@ nav a:hover {
 
 .text-container {
     text-align: left;
-    width: 95%;           /* Match .image-container */
+    width: 98%;           /* Match .image-container */
     max-width: 1700px;    /* Match .image-grid */
     margin: 0 auto;       /* Center the container on the page */
     margin-bottom: 10px;
-    
 }
 
 h1 {
-    font-size: 70px;
-    color: #222222;
+    font-size: 80px;
+    color: #323232;
     text-align: left;
     width: 100%;          /* Now fills the 1700px parent container */
     margin-bottom: 10px;
@@ -71,11 +64,11 @@ h1 {
 
 
 p {
-    font-size: 16px;
+    font-size: 20px;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.2s;
-    color: #222222;
+    color: #323232;
     
 }
 
@@ -96,6 +89,8 @@ p {
     transition: z-index 0.5s; 
     animation: fadeIn 1s ease-in-out both;
     z-index: 1; 
+
+    
 }
 
 .card:nth-child(1) { animation-delay: 0s; }
@@ -177,7 +172,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 98%;
     padding: 20px;
 }
 
@@ -247,7 +242,7 @@ p {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    color: #131010;
+    color: #323232;
     font-size: 20px;
     text-align: center;
     padding: 5px 10px;
@@ -271,7 +266,7 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #131010;
+    color: #323232;
     font-size: 120px;
     cursor: pointer;
     user-select: none;
@@ -289,7 +284,7 @@ p {
 
 
 .language-toggle button.active {
-    color: #131010;
+    color: #323232;
 }
 
 
@@ -314,7 +309,7 @@ p {
 }
 
 .language-toggle button:hover {
-    color: #131010;
+    color: #323232;
 }
 
 
@@ -322,7 +317,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;             /* Matches .image-container width */
+    width: 98%;             /* Matches .image-container width */
     max-width: 1700px;      /* Matches .image-grid max-width */
     margin: 0 auto;         /* Centered on page */
     padding: 20px;
@@ -348,8 +343,10 @@ p {
 
 @media (max-width: 768px) {
     .text-container, .video-container, .image-container {
-        width: 100%;
+        width: 90%;
         padding: 0 20px; /* Gives everything the same "gutters" on mobile */
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     nav {
@@ -363,11 +360,7 @@ p {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .video-container {
-        width: 100%;
-        padding: 10px 0; /* Ensures it stays centered without side-padding offset */
-    }
-
+    
     .video-container.side-by-side {
         grid-template-columns: 1fr; /* Stacks videos on mobile */
     }
@@ -382,10 +375,24 @@ p {
 .about-container {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    width: 88%;
+    gap: 40px;
+    width: 98%;           /* Match .text-container / .image-container on other pages */
+    max-width: 1700px;    /* Match the site-wide content column */
     margin: 0 auto;
-    padding: 20px;
+    padding: 0;
+}
+
+/* Inside the flex row the text column shouldn't keep its page-level width */
+.about-container .text-container {
+    flex: 1;
+    width: auto;
+    margin: 0;
+    min-width: 0;
+}
+
+/* Render the blank lines in the data-english/data-dutch text as paragraph breaks */
+.text-container p {
+    white-space: pre-line;
 }
 
 .title-column {
@@ -401,10 +408,11 @@ p {
 
 
 .about-image {
-    width: 70%;
+    width: 35%;
+    flex-shrink: 0;
     height: auto;
-    align-self: center;
-    margin-top: 160px;
+    align-self: flex-start;
+    margin-top: 197px;    /* Top edge lines up exactly with the first paragraph (H1 + language toggle height) */
     animation: fadeIn 2s ease-in-out forwards;
 }
 
@@ -418,11 +426,11 @@ p {
     max-width: 800px;
     margin: 0 auto;
     font-size: 25px;
-    color: #222222;
+    color: #323232;
 }
 
 .contact-info a {
-    color: #222222;
+    color: #323232;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -454,14 +462,27 @@ p {
 
 
     .about-image {
-        width: 100%;
+        width: calc(100% - 40px);  /* Same 20px gutters as the text above it */
         margin-top: 0;
-        align-self: flex-start;
+        align-self: center;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        width: 90%;           /* Match .text-container / .image-container on mobile */
+        padding: 0 20px;      /* Same 20px "gutters" as the other containers */
+        margin: 0 auto;       /* Center the grid on the page */
+        box-sizing: border-box;
+        gap: 20px;            /* Same spacing between cards as desktop (~4% of a column) */
+    }
+
+    /* The 96% width leaves a 4% gap on the right of each card
+       (column spacing on desktop) — remove it in the single column
+       so cards sit perfectly centered */
+    .card img,
+    .card::before {
         width: 100%;
+        height: 100%;
     }
 
     header img {
@@ -477,7 +498,7 @@ p {
     display: flex;
     justify-content: flex-end; /* Keeps the links on the right side */
     z-index: 8000;
-    background: #F6F6F6;
+    background: #f6f6f600;
     padding-bottom: 10px;
 }
 
@@ -489,7 +510,7 @@ p {
     h1 {
         font-size: 40px;
         width: 100%;
-        padding: 0 20px;
+        padding: 0 0px;
         transform: translateX(0); /* Reset fix on mobile as padding handles it */
         box-sizing: border-box;
     }
@@ -517,7 +538,7 @@ p {
     text-align: left;
     
     /* Alignment Logic - Matches images and headers */
-    width: 95%;           
+    width: 98%;           
     max-width: 1700px;    
     margin: 0 auto;       /* Centers the container box */
     
@@ -532,18 +553,18 @@ p {
 
 @media (max-width: 768px) {
     .video-link-container {
-        width: 100%;
+        width: 90%;
         padding: 0 20px;  /* Matches your new standard mobile gutter */
-        box-sizing: border-box;
+  
     }
 }
 
 /* The Link Styling */
 .video-link {
-    font-size: 15px;       /* Matches your paragraph size */
+    font-size: 20px;       /* Matches your paragraph size */
     font-weight: bold;     /* Makes it stand out slightly */
     text-decoration: none; /* Removes standard underline */
-    color: #131010;        /* Default Black */
+    color: #323232;        /* Default Black */
     transition: color 0.3s ease;
     cursor: pointer;
 }
@@ -562,7 +583,7 @@ p {
 
 @keyframes flash-icons {
     0% {
-        color: #222222;
+        color: #323232;
         transform: scale(1);
     }
     10% {
@@ -570,7 +591,7 @@ p {
         transform: scale(1.1); /* Scale Up: Peak size */
     }
     25% {
-        color: #222222;       /* Reset Color: Black */
+        color: #323232;       /* Reset Color: Black */
         transform: scale(1);   /* Scale Down: Back to normal */
     }
 
