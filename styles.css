@@ -322,18 +322,18 @@ p {
     top: 50%;
     transform: translateY(-50%);
     color: #323232;
-    font-size: 120px;
+    font-size: 90px;
     cursor: pointer;
     user-select: none;
 }
 
 .left-arrow {
-    left: 30px;
+    left: 120px;
     z-index: 1000;
 }
 
 .right-arrow {
-    right: 30px;
+    right: 120px;
     z-index: 1000;
 }
 
@@ -592,7 +592,7 @@ p {
 @media (max-width: 768px) {
     .video-link-container {
         width: 90%;
-        padding: 0 20px;  /* Matches your new standard mobile gutter */
+        padding: 0 0px;  /* Matches your new standard mobile gutter */
         margin: 0 auto;
         box-sizing: border-box;
     }
