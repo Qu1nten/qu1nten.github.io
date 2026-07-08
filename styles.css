@@ -210,23 +210,39 @@ p {
     width: 90%;           /* Match .text-container */
     max-width: 1700px;    /* Match the site-wide content column */
     margin: 0 auto;
-    padding: 10px 0;      /* Half the grid gap so vertical spacing between stacked grids (10+10) matches the 20px horizontal gap */
+    padding: 15px 0;      /* Half the grid gap so vertical spacing between stacked grids (10+10) matches the 20px horizontal gap */
     box-sizing: border-box;
+}
+
+@media (hover: none), (max-width: 768px) {
+    .image-container {
+        padding: 10px;
+    }
 }
 
 /* Image Grid */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
     max-width: 1700px;
     width: 100%;
     justify-content: center;
 }
 
+@media (hover: none), (max-width: 768px) {
+    .image-grid {
+        gap: 20px;
+    }
+}
+
 /* Narrower single-image grid (e.g. fenix2) — smaller than the full content width */
 .image-grid-narrow {
     max-width: 1400px;
+}
+
+.image-grid-narrow2 {
+    max-width: 1000px;
 }
 
 .image-grid img {
@@ -556,9 +572,6 @@ p {
     .image-grid {
         grid-template-columns: 1fr;
     }
-
-    /* No .image-container padding override — the shared mobile rule
-       (width 90%, padding 0 20px) keeps images aligned with the text */
 
     .language-toggle button {
         font-size: 10px;
