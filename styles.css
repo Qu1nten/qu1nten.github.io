@@ -25,7 +25,7 @@ nav {
     justify-content: flex-end; /* Keep the links on the right */
     z-index: 8000;
     background-color: #f6f6f6; /* The bar — content disappears behind it when scrolling */
-    padding: 15px 80px 10px 20px; /* Right inset replaces the old margin-right: 80px */
+    padding: 20px ; /* Right inset replaces the old margin-right: 80px */
     box-sizing: border-box;
 }
 
@@ -210,7 +210,7 @@ p {
     width: 90%;           /* Match .text-container */
     max-width: 1700px;    /* Match the site-wide content column */
     margin: 0 auto;
-    padding: 20px 0;      /* Vertical spacing only — horizontal padding would make it narrower than the text */
+    padding: 10px 0;      /* Half the grid gap so vertical spacing between stacked grids (10+10) matches the 20px horizontal gap */
     box-sizing: border-box;
 }
 
@@ -226,7 +226,7 @@ p {
 
 /* Narrower single-image grid (e.g. fenix2) — smaller than the full content width */
 .image-grid-narrow {
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .image-grid img {
@@ -397,16 +397,10 @@ p {
     display: block;
 }
 
-@media (max-width: 768px) {
-    .text-container, .video-container,  {
-        width: 90%;
-        padding: 0 20px; /* Gives everything the same "gutters" on mobile */
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    nav {
-        padding: 10px 20px; /* Smaller right inset on mobile, matches the content gutters */
+/* Gump House page: narrower video on desktop only; mobile keeps full width */
+@media (min-width: 769px) {
+    .video-container.video-narrow {
+        max-width: 1300px;
     }
 }
 
