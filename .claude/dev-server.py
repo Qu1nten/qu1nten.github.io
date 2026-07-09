@@ -13,6 +13,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return p + '.html'
         return p
 
+    def end_headers(self):
+        # Dev server: never let the browser cache stale files
+        self.send_header('Cache-Control', 'no-store')
+        super().end_headers()
+
 
 if __name__ == '__main__':
     with http.server.ThreadingHTTPServer(('', PORT), Handler) as httpd:
