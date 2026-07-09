@@ -420,6 +420,18 @@ p {
     }
 }
 
+/* Spacer: extra vertical whitespace between images/videos/text; desktop only, invisible on mobile */
+.spacer {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .spacer {
+        display: block;
+        height: 60px;
+    }
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
