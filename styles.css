@@ -218,6 +218,14 @@ p {
     .image-container {
         padding: 10px;
     }
+
+    /* Give the text the same 10px side gutters as the image padding above,
+       so text and image edges line up vertically on mobile. Videos and
+       links get the same gutters next to their own base rules below. */
+    .text-container {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
 }
 
 /* Image Grid */
@@ -396,6 +404,14 @@ p {
     opacity: 0;
     animation: fadeIn 2s ease-in-out both;
     animation-delay: 0.5s;
+}
+
+/* Mobile: same 10px side gutters as the .image-container padding, so video
+   and image edges line up vertically */
+@media (hover: none), (max-width: 768px) {
+    .video-container {
+        padding: 20px 10px;
+    }
 }
 
 /* Specific layout for the Minecraft page with two videos */
@@ -579,8 +595,8 @@ p {
 @media (max-width: 768px) {
     .video-container {
         flex-direction: column;
-        /* No padding override here — the shared mobile rule gives it the same
-           20px gutters as the text, keeping video and text edges aligned */
+        /* Horizontal padding comes from the shared mobile rule next to
+           .image-container (10px gutters matching the image padding) */
     }
     .video {
         width: 100%;
@@ -593,7 +609,7 @@ p {
 
 
     .about-image {
-        width: calc(100% - 40px);  /* Same 20px gutters as the text above it */
+        width: calc(100% - 20px);  /* Same 10px gutters as the text above it */
         margin-top: 0;
         align-self: center;
     }
@@ -601,7 +617,7 @@ p {
     .projects-grid {
         grid-template-columns: 1fr;
         width: 90%;           /* Match .text-container / .image-container on mobile */
-        padding: 0 20px;      /* Same 20px "gutters" as the other containers */
+        padding: 0 10px;      /* Same 10px gutters as the text and image containers */
         margin: 0 auto;       /* Center the grid on the page */
         box-sizing: border-box;
         gap: 20px;            /* Same spacing between cards as desktop (~4% of a column) */
@@ -668,10 +684,10 @@ p {
     animation-delay: 0.5s; 
 }
 
-@media (max-width: 768px) {
+@media (hover: none), (max-width: 768px) {
     .video-link-container {
         width: 90%;
-        padding: 0 0px;  /* Matches your new standard mobile gutter */
+        padding: 0 10px;  /* Same 10px gutters as the .image-container padding */
         margin: 0 auto;
         box-sizing: border-box;
     }
