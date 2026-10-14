@@ -1,0 +1,213 @@
+/* Styles for the hidden nodenium.html page only.
+   Builds on styles.css, so the colors and fonts match the rest of the site. */
+
+
+/* Introduction with profile picture */
+.nd-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    width: 90%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.nd-intro-text {
+    flex: 1;
+}
+
+.nd-profile {
+    width: 35%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+
+/* Builds */
+.nd-build {
+    /* Arrow width + gap: the video sits this far in, so the text does too */
+    --nd-arrow-width: 50px;
+    --nd-gap: 20px;
+    width: 90%;
+    max-width: 1700px;
+    margin: 80px auto 0;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.nd-build h2 {
+    font-size: 40px;
+    margin-bottom: 0;
+    color: #323232;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+.nd-build-text {
+    max-width: 1100px;
+    margin-left: calc(var(--nd-arrow-width) + var(--nd-gap));
+}
+
+
+/* Media carousel: arrows always visible on the left and right */
+.nd-carousel {
+    display: flex;
+    align-items: center;
+    gap: var(--nd-gap);
+}
+
+.nd-slides {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    background: #E5E5E6;
+    overflow: hidden;
+}
+
+.nd-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+/* The new slide fades in on top... */
+.nd-slide.active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* ...while the old one stays fully visible underneath, so nothing flashes through */
+.nd-slide.leaving {
+    opacity: 1;
+    z-index: 1;
+    transition: none;
+}
+
+/* Missing media: hide the broken image icon, keep the grey box */
+.nd-slide.missing {
+    visibility: hidden;
+}
+
+/* Same look as the arrows in the image modal */
+.nd-arrow {
+    flex: 0 0 var(--nd-arrow-width);
+    text-align: center;
+    color: #323232;
+    font-size: 80px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.nd-arrow:hover {
+    color: #F0BB78;
+}
+
+.nd-carousel.single .nd-arrow {
+    visibility: hidden;
+}
+
+
+/* Screenshot gallery: rows that fill the full width, every image in a row
+   the same height. nodenium.js sets each image's exact width and height. */
+.nd-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Line up with the videos above (they sit between the arrows) */
+    margin: 20px calc(var(--nd-arrow-width) + var(--nd-gap)) 0;
+}
+
+.nd-gallery img {
+    flex: 0 0 auto;
+    width: calc(50% - 10px);   /* Simple two-column fallback until the script runs */
+    height: auto;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out both;
+    animation-delay: 0.5s;
+}
+
+.nd-gallery img:hover {
+    transform: scale(1.02);
+}
+
+
+/* "More work" line, centered under the screenshots */
+.nd-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Same look as the Work / About / Contact links: bold, dark, yellow on hover */
+.nd-link {
+    color: #323232;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nd-link:hover {
+    color: #F0BB78;
+}
+
+
+
+@media (max-width: 768px) {
+    .nd-intro {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .nd-profile {
+        width: 100%;
+    }
+
+    .nd-build {
+        --nd-arrow-width: 20px;
+        --nd-gap: 6px;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .nd-build h2 {
+        font-size: 24px;
+    }
+
+    .nd-arrow {
+        font-size: 32px;
+    }
+
+    .nd-gallery {
+        gap: 10px;
+    }
+}
+
+/* Touch screens don't open the modal (same as the other pages), so no hover zoom */
+@media (hover: none), (max-width: 768px) {
+    .nd-gallery img {
+        cursor: default;
+    }
+
+    .nd-gallery img:hover {
+        transform: none;
+    }
+}
